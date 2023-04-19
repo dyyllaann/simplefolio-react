@@ -15,26 +15,7 @@
 	],
   "hero": {
     "name": "Your Name",
-    "subtitle": "I'm the Unknown Developer.",
-    "icons": [
-      "amazonwebservices-plain-wordmark",
-      "css3-plain-wordmark",
-      "express-plain",
-      "figma-plain",
-      "git-plain-wordmark",
-      "go-plain-wordmark",
-      "html5-plain-wordmark",
-      "javascript-plain",
-      "jest-plain",
-      "materialui-plain",
-      "mongodb-plain-wordmark",
-      "nextjs-plain-wordmark",
-      "nodejs-plain-wordmark",
-      "python-plain-wordmark",
-      "react-plain-wordmark",
-      "tailwindcss-plain",
-      "typescript-plain"
-    ]
+    "subtitle": "I'm the Unknown Developer."
   },
   "about": {
     "title": "About me",

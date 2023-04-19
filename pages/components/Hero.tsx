@@ -22,28 +22,6 @@ const Hero = () => {
           </div>
         </a>
       </div>
-      <div className="pt-32 overflow-hidden max-w-full inline-block">
-        <ul className="flex flex-row justify-around absolute left-0 animate-marquee overflow-hidden max-w-full">
-          {hero.icons.map ((item) => (
-            <li key={item} className="mr-4">
-              <i 
-                className={`devicon-${item} colored`}
-                style={{fontSize: "5rem"}}
-              />
-            </li>
-          ))}
-        </ul>
-        {/* <ul className="flex flex-row justify-around absolute left-0 animate-marquee">
-          {hero.icons.map ((item) => (
-            <li key={item} className="mr-4">
-              <i 
-                className={`devicon-${item} colored`}
-                style={{fontSize: "5rem"}}
-              />
-            </li>
-          ))}
-        </ul> */}
-      </div>
     </section>
   );
 };
