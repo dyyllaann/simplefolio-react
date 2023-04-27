@@ -1,38 +1,141 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<h1 align="center">
+  ⚛ Simplefolio React ⚛
+</h1>
+
+<h2 align="center">
+  A clean, beautiful and responsive portfolio template for Developers!
+</h2>
+
+Feel free to use it as-is or customize it as much as you want. This template was created from scratch and inspired by [Simplefolio](https://github.com/cobidev/simplefolio) by [Jacobo Martinez](https://github.com/cobidev). 
+Simplefolio React uses (roughly) the same portofolio template in React.js.
+
+---
 
 ## Getting Started
 
-First, run the development server:
+See the instructions down below at [Installation](#installation) 
+and [Running / Development](#running-/-development) to get a copy of the 
+project up and running on your local machine for development and 
+testing purposes.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
+---
+
+## Template Instructions:
+
+### Step 1
+
+To update the portfolio, all details are updated in the included index.json file:  
+
+```json
+{
+  "navigation": [
+		{
+			"title": "About",
+			"url": "http://www.example.com/about"
+		},
+		{
+			"title": "Projects",
+			"url": "http://www.example.com/portfolio"
+		},
+		{
+			"title": "Contact",
+			"url": "http://www.example.com/contact"
+		}
+	],
+  "hero": {
+    "name": "Your Name",
+    "subtitle": "I'm the Unknown Developer."
+  },
+  "about": {
+    "title": "About me",
+    "image": "/placeholder.png",
+    "primary": "This is where you can describe about yourself. The more you describe about yourself, the more chances you have!",
+    "secondary": "Extra Information about you! like hobbies and your goals."
+  },
+  "projects": {
+    "title": "Projects",
+    "projects": [
+      {
+        "title": "Project 1",
+        "description": "Describe the project being very specific, you can use the Twitter standard: no more than 280 characters: complement the information: the skills learned or reinforced in its realization and how you faced it, prove to be proactive in the search for solutions.",
+        "url": "http://www.example.com/project1",
+        "github": "http://www.example.com/github",
+        "image": "/placeholder-700x350.png"
+      },
+      {
+				"title": "Project 2",
+				"description": "Demonstrate in this description the skills of a programmer: such as having commitment, having perseverance and accepting alternative solutions. Remember that being a portfolio you are not selling the project, you are selling yourself, it reflects the resources used: Frameworks, libraries, platforms, etc.",
+				"url": "http://www.example.com/project2",
+        "github": "http://www.example.com/github",
+				"image": "/placeholder-700x350.png"
+			},
+      {
+				"title": "Project 3",
+				"description": "If the project was collaborative, reflect it in this description, that will demonstrate communication and/or leadership skills. Additionally, if you made use of the mastery of a second language, it will reflect on you professionalism.",
+				"url": "http://www.example.com/project3",
+        "github": "http://www.example.com/github",
+				"image": "/placeholder-700x350.png"
+			}
+    ]
+  },
+  "contact": {
+    "title": "Contact",
+    "description": "This is where you can describe about your contact. The more you describe about your contact, the more chances you have!",
+    "linkedin": "",
+    "twitter": "",
+    "github": "",
+    "email": ""
+  }
+}
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+That's it!
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+---
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+## Technologies used
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+- [Tailwind](https://tailwindcss.com/) - Utility-First CSS framework
+- [Next.js](https://nextjs.org/) - Web development framework
+- [Vite](https://vitejs.dev) - Frontend development environment
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Authors
 
-## Learn More
+- **Dylan Arveson** - [https://github.com/dyyllaann](https://github.com/dyyllaann)
 
-To learn more about Next.js, take a look at the following resources:
+## License
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## Acknowledgments
 
-## Deploy on Vercel
+I was motivated to create this project after seeing the Simplefolio that [Jacobo Martinez](https://github.com/cobimr) created and shared with the [ZTM Community](https://github.com/zero-to-mastery) and [Andrei](https://github.com/aneagoie)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Prerequisites
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+You will need the following things properly installed on your computer.
+
+* [Git](https://git-scm.com/)
+* [Node.js](https://nodejs.org/) (with npm)
+* [Google Chrome](https://google.com/chrome/)
+
+## Installation
+
+* `git clone https://github.com/dyyllaann/simplefolio-react.git` this repository
+* `cd simplefolio-react`
+* `npm install`
+
+## Running / Development
+
+* `npm run dev`
+* Visit your app at [http://localhost:3000](http://localhost:3000).
+
+### Linting
+
+* `npm run lint:hbs`
+* `npm run lint:js`
+* `npm run lint:js -- --fix`
+
+### Building
+
+*  `npm run build`
