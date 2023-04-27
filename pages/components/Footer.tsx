@@ -21,7 +21,7 @@ const Footer = () => {
         </a>
       </div>
       <span className="text-sm text-center text-neutral-600">
-        © {getYear()} - Template developed by <a href="#">Dylan Arveson</a>
+        © {getYear()} - Template developed by <a href="https://www.dylanarveson.com">Dylan Arveson</a>
       </span>
     </div>
   );
