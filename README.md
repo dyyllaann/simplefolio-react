@@ -6,9 +6,7 @@
   A clean, beautiful and responsive portfolio template for developers!
 </h2>
 
-<video>
-  <source src="/public/simplefolio-react-preview.webm">
-</video>
+<img src="/public/simplefolio-react-preview.gif">
 
 Feel free to use it as-is or customize it as much as you want. This template was created from scratch and inspired by [Simplefolio](https://github.com/cobidev/simplefolio) by [Jacobo Martinez](https://github.com/cobidev). 
 Simplefolio React uses (roughly) the same portofolio template in React.js.
