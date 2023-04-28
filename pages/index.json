@@ -52,9 +52,11 @@
   "contact": {
     "title": "Contact",
     "description": "This is where you can describe about your contact. The more you describe about your contact, the more chances you have!",
-    "linkedin": "",
-    "twitter": "",
-    "github": "",
-    "email": ""
-  }
+    "formId": "your-form-id"
+  },
+  "footer": {
+		"linkedin": "",
+		"twitter": "",
+		"github": ""
+	}
 }

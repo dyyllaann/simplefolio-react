@@ -83,15 +83,24 @@ To update the portfolio, all details are updated in the included index.json file
   "contact": {
     "title": "Contact",
     "description": "This is where you can describe about your contact. The more you describe about your contact, the more chances you have!",
-    "linkedin": "",
-    "twitter": "",
-    "github": "",
-    "email": ""
-  }
+    "formId": "your-form-id"
+  },
+  "footer": {
+		"linkedin": "",
+		"twitter": "",
+		"github": ""
+	}
 }
 ```
 
-That's it!
+### Step 2
+
+Set up your contact account with Formspree. 
+
+1. Go to [https://formspree.io/](https://formspree.io/).
+2. Create account.
+3. Get your form id. 
+4. Copy/paste your form id into the formId section of the index.json file.
 
 ---
 
@@ -100,6 +109,7 @@ That's it!
 - [Tailwind](https://tailwindcss.com/) - Utility-First CSS framework
 - [Next.js](https://nextjs.org/) - Web development framework
 - [Vite](https://vitejs.dev) - Frontend development environment
+- [Formspree](https://formspree.io/) - Form processing API
 
 ## Authors
 
