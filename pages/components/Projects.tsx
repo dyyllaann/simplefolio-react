@@ -41,7 +41,7 @@ const Projects = () => {
                 <Image 
                   src={item.image} 
                   alt="project image" 
-                  className="mt-6 md:mt-12 lg:mt-0 w-full shadow-lg" 
+                  className="mt-6 md:mt-12 lg:mt-0 w-full shadow-lg rounded-lg" 
                   width={700} 
                   height={350}
                 />
