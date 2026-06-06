@@ -4,53 +4,48 @@ import Image from "next/image";
 
 const Projects = () => {
   const projects = config.projects;
+
   return (
-    <div id={projects.title} className="px-8 md:px-16 md:px-32 pb-16 bg-white">
-      <h1 className="pt-12 uppercase font-bold text-center text-black text-bold text-4xl">{projects.title}</h1>
-      <div className="projects__menu">
-        <ul>
-          {projects.projects.map((item) => (
-            <li key={item.title} className="flex flex-col lg:flex-row mt-12">
-              <div className="lg:w-1/3">
-                <h2 className="text-2xl">
-                  {item.title}
-                </h2>
-                <p className="mt-6">
-                  {item.description}
-                </p>
-                <div className="flex mt-4">
-                  <div className="text-md text-center font-semibold p-0.5 bg-gradient-to-r from-rose-400 via-fuchsia-500 to-indigo-500">
-                    <a href={item.url} target="_blank" rel="noreferrer">
-                      <div className="bg-white">
-                        <span className="block py-0.5 px-2 bg-white bg-gradient-to-r from-rose-400 via-fuchsia-500 to-indigo-500 bg-clip-text text-transparent">
-                          See Project
-                        </span>
-                      </div>
-                    </a>
-                  </div>
-                  <div className="bg-white ml-2 font-semibold">
-                    <a href={item.github} target="_blank" rel="noreferrer">                      
-                      <span className="block py-1 px-2 bg-white bg-gradient-to-r from-rose-400 via-fuchsia-500 to-indigo-500 bg-clip-text text-transparent">
-                        Source Code
-                      </span>
-                    </a>
-                  </div>
-                </div>
+    <section id="projects">
+      <h2 className="section-title dark-blue-text">{projects.title}</h2>
+      <div className="project-wrapper">
+        {projects.projects.map((item) => (
+          <div key={item.title} className="row">
+            <div className="project-wrapper__text">
+              <h3 className="project-wrapper__text-title">{item.title}</h3>
+              <p>{item.description}</p>
+              <div className="project-wrapper__buttons">
+                <a
+                  href={item.url}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="cta-btn cta-btn--hero"
+                >
+                  <span>See Live</span>
+                </a>
+                <a
+                  href={item.github}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="cta-btn cta-btn--hero"
+                >
+                  <span>Source Code</span>
+                </a>
               </div>
-              <div className="lg:ml-12">
-                <Image 
-                  src={item.image} 
-                  alt="project image" 
-                  className="mt-6 md:mt-12 lg:mt-0 w-full shadow-lg" 
-                  width={700} 
-                  height={350}
-                />
-              </div>
-            </li>
-          ))}
-        </ul>
+            </div>
+            <div className="project-wrapper__image">
+              <Image
+                src={item.image}
+                alt={item.title}
+                className="thumbnail"
+                width={700}
+                height={350}
+              />
+            </div>
+          </div>
+        ))}
       </div>
-    </div>
+    </section>
   );
 };
 

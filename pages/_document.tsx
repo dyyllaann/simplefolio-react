@@ -1,24 +1,18 @@
-import { Html, Head, NextScript } from 'next/document'
-import Header from './components/Header'
-import Hero from './components/Hero'
-import About from './components/About'
-import Projects from './components/Projects'
-import Contact from './components/Contact'
-import Footer from './components/Footer'
+import { Html, Head, Main, NextScript } from 'next/document'
+import config from './index.json'
 
 export default function Document() {
   return (
-    <Html lang="en" className='scroll-smooth'>
+    <Html lang="en" className='scroll-smooth' data-theme={config.theme}>
+      <Head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css"/>
-      <Head />
-      <body className='text-black'>
+      </Head>
+      <body>
+        <Main />
         <NextScript />
-        <Header />
-        <Hero />
-        <About />
-        <Projects />
-        <Contact />
-        <Footer />
       </body>
     </Html>
   )

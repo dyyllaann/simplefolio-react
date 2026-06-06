@@ -2,26 +2,819 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+/* ============================================
+   1. THEME VARIABLES
+   ============================================ */
+
+[data-theme="default"] {
+  --color-primary: 251 113 133;         /* rose-400 */
+  --color-secondary: 217 70 239;        /* fuchsia-500 */
+  --color-accent: 99 102 241;           /* indigo-500 */
+  --color-surface: 255 255 255;         /* white */
+  --color-on-surface: 0 0 0;            /* black */
+  --color-surface-dark: 38 38 38;       /* neutral-800 */
+  --color-on-surface-dark: 163 163 163; /* neutral-400 */
+  --color-muted: 82 82 82;             /* neutral-600 */
+
+  --gradient-primary: linear-gradient(to right, #fb7185, #d946ef, #6366f1);
+  --gradient-primary-135: linear-gradient(135deg, #fb7185, #d946ef, #6366f1);
+  --gradient-name: linear-gradient(to right, #9333ea, #db2777, #2563eb);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+[data-theme="simplefolio-original"] {
+  --color-primary: 2 170 176;           /* #02aab0 */
+  --color-secondary: 0 205 172;         /* #00cdac */
+  --color-accent: 39 35 65;             /* #272341 */
+  --color-surface: 255 255 255;         /* white */
+  --color-on-surface: 39 35 65;         /* #272341 dark blue */
+  --color-surface-dark: 39 35 65;       /* #272341 */
+  --color-on-surface-dark: 255 255 255; /* white */
+  --color-muted: 163 163 163;          /* light grey */
+
+  --gradient-primary: linear-gradient(135deg, #02aab0, #00cdac);
+  --gradient-primary-135: linear-gradient(135deg, #02aab0, #00cdac);
+  --gradient-name: linear-gradient(135deg, #02aab0, #00cdac);
+}
+
+/* ============================================
+   2. BASE / GLOBAL STYLES
+   ============================================ */
+
+html {
+  font-size: 62.5%;
+}
+
+html.sr .load-hidden {
+  visibility: hidden;
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  font-family: "Montserrat", sans-serif;
+  text-align: center;
+  scroll-behavior: smooth;
+  color: rgb(var(--color-on-surface));
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #d2d2d2;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(var(--color-primary));
+}
+
+/* Typography */
+h1 {
+  font-weight: 700;
+}
+
+p,
+a {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.6rem;
+}
+
+a,
+a:link,
+a:visited,
+a:active {
+  text-decoration: none;
+}
+
+a:hover {
+  transition: all 0.3s ease-in-out;
+}
+
+/* ============================================
+   3. SHARED UTILITY CLASSES
+   ============================================ */
+
+.section-title {
+  margin: 0;
+  margin-bottom: 4.5rem;
+  font-size: 4rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+@media (max-width: 600px) {
+  .section-title {
+    font-size: 2.8rem;
+  }
+}
+
+.dark-blue-text {
+  color: rgb(var(--color-accent)) !important;
+}
+
+.text-color-main {
+  background-image: var(--gradient-primary-135);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
+.text-color-main:hover {
+  transform: translateX(2px);
+}
+
+@media (max-width: 600px) {
+  .text-color-main {
+    background-image: none;
+    -webkit-text-fill-color: rgb(var(--color-secondary));
+    color: rgb(var(--color-secondary));
+  }
+}
+
+/* ============================================
+   4. CTA BUTTONS
+   ============================================ */
+
+.cta-btn {
+  display: inline-block;
+  position: relative;
+  padding: 0.8rem 1.6rem;
+  font-weight: bold;
+  line-height: 1;
+  z-index: 1;
+  transition: all cubic-bezier(0.19, 1, 0.22, 1) 0.6s;
+}
+
+.cta-btn::after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 0;
+  height: 100%;
+  left: 0;
+  bottom: 0;
+  z-index: -1;
+  transition: all cubic-bezier(0.19, 1, 0.22, 1) 0.3s;
+}
+
+/* Hero CTA button — gradient border + gradient text, fills solid on hover */
+.cta-btn--hero {
+  background-image: var(--gradient-primary-135);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  border-width: 2px;
+  border-style: solid;
+  border-image: var(--gradient-primary-135);
+  border-image-slice: 1;
+  color: rgb(var(--color-primary)); /* fallback */
+}
+
+.cta-btn--hero::after {
+  background-image: var(--gradient-primary-135);
+}
+
+.cta-btn--hero:hover {
+  -webkit-text-fill-color: #fff;
+  text-decoration: none;
+}
+
+.cta-btn--hero:hover::after {
+  width: 100%;
+}
+
+/* Gradient text on nested span (React component DOM structure) */
+.cta-btn--hero span {
+  background-image: var(--gradient-primary-135);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.cta-btn--hero:hover span {
+  -webkit-text-fill-color: #fff;
+  color: #fff;
+}
+
+/* Resume CTA button — white border, fills white on hover */
+.cta-btn--resume {
+  color: #fff;
+  border: 2px solid #fff;
+}
+
+.cta-btn--resume::after {
+  background: #fff;
+}
+
+.cta-btn--resume:hover {
+  color: rgb(var(--color-secondary));
+  text-decoration: none;
+}
+
+.cta-btn--resume:hover::after {
+  width: 100%;
+}
+
+/* ============================================
+   5. HEADER / NAVBAR
+   ============================================ */
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  padding: 2rem;
+}
+
+@media (min-width: 1024px) {
+  .header {
+    padding: 2rem 8rem;
+  }
+}
+
+.header__menu {
+  display: flex;
+  list-style: none;
+  gap: 2.5rem;
+  margin: 0;
+  padding: 0;
+}
+
+.header__menu a {
+  color: rgb(var(--color-on-surface));
+  font-weight: 600;
+  font-size: 1.4rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  transition: color 0.3s ease;
+}
+
+.header__menu a:hover {
+  color: rgb(var(--color-primary));
+}
+
+/* ============================================
+   6. HERO SECTION
+   ============================================ */
+
+#hero {
+  min-height: 100vh;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  overflow-x: hidden;
+  background-color: rgb(var(--color-surface));
+}
+
+.hero-name {
+  background-image: var(--gradient-name);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  white-space: nowrap;
+}
+
+/* -- Default theme hero -- */
+[data-theme="default"] .hero-container {
+  padding: 0 2rem;
+  margin: 0 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+@media (min-width: 1024px) {
+  [data-theme="default"] .hero-container {
+    padding: 0 8rem;
+  }
+}
+
+[data-theme="default"] .hero-title {
+  font-size: 3.75rem;
+  margin-top: 16rem;
+  font-weight: 700;
+  letter-spacing: 0.025em;
+}
+
+[data-theme="default"] .hero-name {
+  margin-left: 1.5rem;
+}
+
+[data-theme="default"] .hero-cta {
+  margin-top: 1.5rem;
+}
+
+[data-theme="default"] .hero-cta .cta-btn {
+  font-size: 2rem;
+}
+
+/* -- Simplefolio-original theme hero -- */
+[data-theme="simplefolio-original"] #hero {
+  padding: 0 5.6rem;
+  color: rgb(var(--color-accent));
+  font-weight: 400;
+}
+
+[data-theme="simplefolio-original"] .hero-title {
+  font-size: 5.6rem;
+  font-weight: 700;
+  margin-bottom: 3.2rem;
+  text-align: left;
+}
+
+[data-theme="simplefolio-original"] .hero-cta {
+  display: flex;
+}
+
+[data-theme="simplefolio-original"] .hero-cta a {
+  font-size: 2.4rem;
+}
+
+@media (max-width: 75em) {
+  [data-theme="simplefolio-original"] .hero-title {
+    font-size: 4rem;
+  }
+}
+
+@media (max-width: 56.25em) {
+  [data-theme="simplefolio-original"] .hero-title {
+    font-size: 3.6rem;
+    text-align: center;
+  }
+
+  [data-theme="simplefolio-original"] .hero-cta {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 37.5em) {
+  [data-theme="simplefolio-original"] #hero {
+    padding: 0 1rem;
+  }
+
+  [data-theme="simplefolio-original"] .hero-title {
+    font-size: 3.5rem;
+    line-height: 1;
+  }
+
+  [data-theme="simplefolio-original"] .hero-cta a {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 320px) {
+  [data-theme="simplefolio-original"] .hero-title {
+    font-size: 2.8rem;
+  }
+}
+
+/* ============================================
+   7. ABOUT SECTION
+   ============================================ */
+
+#about {
+  padding: 5rem 2rem 8rem;
+  color: #fff;
+}
+
+@media (min-width: 768px) {
+  #about {
+    padding: 5rem 8rem 8rem;
+  }
+}
+
+/* -- Default theme about -- */
+[data-theme="default"] #about {
+  background-image: var(--gradient-primary);
+}
+
+/* -- Simplefolio-original theme about -- */
+[data-theme="simplefolio-original"] #about {
+  background-color: rgb(var(--color-primary));
+  background-image: var(--gradient-primary-135);
+  height: 100%;
+  border-bottom: 0;
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
+  padding-bottom: 10%;
+}
+
+@media (max-width: 75em) {
+  [data-theme="simplefolio-original"] #about {
+    height: 100%;
+    -webkit-clip-path: none;
+    clip-path: none;
+  }
+}
+
+/* About section title with underline */
+[data-theme="simplefolio-original"] .section-title--about {
+  position: relative;
+}
+
+[data-theme="simplefolio-original"] .section-title--about::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 95%;
+  left: calc(50% - 2rem);
+  width: 4rem;
+  height: 4px;
+  background: #fff;
+}
+
+/* About wrapper layout */
+.about-wrapper {
+  margin-top: 4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@media (min-width: 768px) {
+  .about-wrapper {
+    flex-direction: row;
+    align-items: center;
+  }
+}
+
+.about-wrapper__image {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (min-width: 768px) {
+  .about-wrapper__image {
+    width: 50%;
+  }
+}
+
+.about-wrapper__image img {
+  max-width: 350px;
+  width: 100%;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.about-wrapper__info {
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  flex-direction: column;
+  padding-top: 2rem;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .about-wrapper__info {
+    width: 50%;
+    margin-left: 1rem;
+    padding-top: 0;
+    text-align: left;
+  }
+}
+
+@media (max-width: 56.25em) {
+  .about-wrapper__info {
+    align-items: center;
+    text-align: center;
+  }
+}
+
+.about-wrapper__info-text {
+  margin-top: 1.5rem;
+}
+
+.about-wrapper__info-text:first-child {
+  margin-top: 0;
+}
+
+.about-wrapper__resume {
+  margin-top: 2.4rem;
+}
+
+@media (min-width: 768px) {
+  .about-wrapper__resume {
+    text-align: left;
+  }
+}
+
+/* ============================================
+   8. PROJECTS SECTION
+   ============================================ */
+
+#projects {
+  background-color: rgb(var(--color-surface));
+  color: rgb(var(--color-accent));
+  padding: 5rem 2rem 4rem;
+}
+
+@media (min-width: 768px) {
+  #projects {
+    padding: 5rem 8rem 4rem;
+  }
+}
+
+/* -- Simplefolio-original theme projects -- */
+[data-theme="simplefolio-original"] #projects {
+  margin-top: -10rem;
+  padding-top: 15rem;
+}
+
+@media (max-width: 75em) {
+  [data-theme="simplefolio-original"] #projects {
+    margin-top: 0;
+    padding-top: 5rem;
+  }
+}
+
+/* Project wrapper */
+.project-wrapper {
+  margin-bottom: 15rem;
+}
+
+@media (max-width: 37.5em) {
+  .project-wrapper {
+    margin-bottom: 0;
+  }
+}
+
+.project-wrapper .row {
+  margin-bottom: 8rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@media (min-width: 1024px) {
+  .project-wrapper .row {
+    flex-direction: row;
+  }
+}
+
+@media (max-width: 37.5em) {
+  .project-wrapper .row {
+    margin-bottom: 4rem;
+  }
+}
+
+/* Project text */
+.project-wrapper__text {
+  text-align: left;
+}
+
+@media (min-width: 1024px) {
+  .project-wrapper__text {
+    width: 33.333%;
+  }
+}
+
+@media (max-width: 56.25em) {
+  .project-wrapper__text {
+    text-align: center;
+  }
+}
+
+.project-wrapper__text-title {
+  font-weight: bold;
+  margin-bottom: 1.8rem;
+  font-size: 2.5rem;
+}
+
+.project-wrapper__text p > a {
+  color: rgb(var(--color-secondary));
+}
+
+.project-wrapper__buttons {
+  margin-top: 2.5rem;
+  display: flex;
+  gap: 1.2rem;
+}
+
+@media (max-width: 56.25em) {
+  .project-wrapper__buttons {
+    justify-content: center;
+  }
+}
+
+/* Project image */
+.project-wrapper__image {
+  width: 90%;
+  margin: 0 auto;
+  margin-top: 3rem;
+}
+
+@media (min-width: 1024px) {
+  .project-wrapper__image {
+    margin-left: 3rem;
+    margin-top: 0;
+    flex: 1;
+  }
+}
+
+@media (max-width: 56.25em) {
+  .project-wrapper__image {
+    width: 100%;
+    margin: 2rem 0 0;
+  }
+}
+
+/* Project thumbnail */
+.thumbnail {
+  border: none;
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.08), 0 0 6px rgba(0, 0, 0, 0.05);
+  transition: all 0.2s ease-out;
+  width: 100%;
+}
+
+.thumbnail:hover {
+  box-shadow: 0px 4px 8px rgba(38, 38, 38, 0.2);
+  transform: translateY(-4px);
+  transition: all 0.2s ease-out;
+}
+
+/* ============================================
+   9. CONTACT SECTION
+   ============================================ */
+
+#contact {
+  color: #fff;
+  padding: 5rem 2rem 10rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@media (min-width: 768px) {
+  #contact {
+    padding: 5rem 8rem 10rem;
+  }
+}
+
+/* -- Default theme contact -- */
+[data-theme="default"] #contact {
+  background-image: var(--gradient-primary);
+}
+
+/* -- Simplefolio-original theme contact -- */
+[data-theme="simplefolio-original"] #contact {
+  background-image: var(--gradient-primary-135);
+  -webkit-clip-path: polygon(0 15vh, 100% 0, 100% 100%, 0 100%);
+  clip-path: polygon(0 15vh, 100% 0, 100% 100%, 0 100%);
+  padding: 15rem 0 10rem;
+  margin-top: -10rem;
+}
+
+@media (max-width: 75em) {
+  [data-theme="simplefolio-original"] #contact {
+    -webkit-clip-path: none;
+    clip-path: none;
+    margin-top: 0;
+    padding: 5rem 0;
+  }
+}
+
+/* Contact wrapper */
+.contact-wrapper {
+  margin-top: 3.2rem;
+  padding: 0 2rem;
+}
+
+.contact-wrapper__text {
+  margin-bottom: 2.5rem;
+}
+
+/* Contact Form */
+.contact-form {
+  width: 100%;
+  max-width: 60rem;
+  margin: 3.2rem auto 0;
+  padding: 0 2rem;
+}
+
+[data-theme="default"] .contact-form {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 1.2rem;
+  padding: 3rem 2.5rem;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.contact-form__field {
+  margin-bottom: 2rem;
+}
+
+.contact-form__label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 0.8rem;
+  text-align: left;
+  color: #fff;
+}
+
+.contact-form__input {
+  width: 100%;
+  padding: 1rem 1.2rem;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.6rem;
+  border-radius: 4px;
+  transition: border-color 0.3s ease;
+  box-sizing: border-box;
+}
+
+.contact-form__input::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.contact-form__input:focus {
+  outline: none;
+  border-color: #fff;
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.contact-form__submit {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.contact-form__submit .cta-btn {
+  font-size: 1.8rem;
+}
+
+/* ============================================
+   10. FOOTER
+   ============================================ */
+
+.footer {
+  background-color: rgb(var(--color-surface-dark));
+  padding: 4.8rem 0;
+}
+
+.social-links {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.social-links a {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: rgb(var(--color-on-surface-dark));
+  font-size: 3rem;
+  width: 5rem;
+  height: 5rem;
+  margin: 1.6rem;
+  transition: all 0.2s ease-in;
+}
+
+.social-links a:hover {
+  transform: translateY(-2px);
+}
+
+.footer hr {
+  margin: 1rem auto;
+  border: 0;
+  width: 50%;
+  border-top: 2px solid grey;
+}
+
+.footer__text {
+  color: rgb(var(--color-muted));
+  font-size: 1.3rem;
+}
+
+.footer__text a {
+  color: rgb(var(--color-muted));
+  font-size: 1.3rem;
+}
+
+.footer__text a:hover {
+  color: rgb(var(--color-on-surface-dark));
+  transition: all 0.2s ease-in;
+}
+
+.back-to-top {
+  display: inline-block;
+  margin: 2rem 0 0;
+  color: rgb(var(--color-on-surface-dark));
+  font-size: 2.4rem;
+  transition: all 0.2s ease-in;
+}
+
+.back-to-top:hover {
+  transform: translateY(-2px);
 }

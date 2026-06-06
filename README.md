@@ -108,7 +108,6 @@ Set up your contact account with Formspree.
 
 - [Tailwind](https://tailwindcss.com/) - Utility-First CSS framework
 - [Next.js](https://nextjs.org/) - Web development framework
-- [Vite](https://vitejs.dev) - Frontend development environment
 - [Formspree](https://formspree.io/) - Form processing API
 
 ## Authors
@@ -128,8 +127,7 @@ I was motivated to create this project after seeing the Simplefolio that [Jacobo
 You will need the following things properly installed on your computer.
 
 * [Git](https://git-scm.com/)
-* [Node.js](https://nodejs.org/) (with npm)
-* [Google Chrome](https://google.com/chrome/)
+* [Node.js](https://nodejs.org/) 18 or higher (with npm)
 
 ## Installation
 
@@ -144,9 +142,7 @@ You will need the following things properly installed on your computer.
 
 ### Linting
 
-* `npm run lint:hbs`
-* `npm run lint:js`
-* `npm run lint:js -- --fix`
+* `npm run lint`
 
 ### Building
 

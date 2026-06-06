@@ -1,5 +1,4 @@
 /** @type {import('tailwindcss').Config} */
-// const plugin = require("tailwindcss/plugin");
 
 module.exports = {
 	darkMode: "class",
@@ -10,6 +9,16 @@ module.exports = {
 	],
 	theme: {
 		extend: {
+			colors: {
+				primary: "rgb(var(--color-primary) / <alpha-value>)",
+				secondary: "rgb(var(--color-secondary) / <alpha-value>)",
+				accent: "rgb(var(--color-accent) / <alpha-value>)",
+				surface: "rgb(var(--color-surface) / <alpha-value>)",
+				"on-surface": "rgb(var(--color-on-surface) / <alpha-value>)",
+				"surface-dark": "rgb(var(--color-surface-dark) / <alpha-value>)",
+				"on-surface-dark": "rgb(var(--color-on-surface-dark) / <alpha-value>)",
+				muted: "rgb(var(--color-muted) / <alpha-value>)",
+			},
 			keyframes: {
 				marquee1: {
 					"0%": { transform: "translateX(0%)" },
@@ -31,13 +40,5 @@ module.exports = {
 			},
 		},
 	},
-	plugins: [
-		// plugin(function ({ addBase, theme }) {
-		// 	addBase({
-		// 		h1: { fontSize: theme("fontSize.2xl") },
-		// 		h2: { fontSize: theme("fontSize.xl") },
-		// 		h3: { fontSize: theme("fontSize.lg") },
-		// 	});
-		// }),
-	],
+	plugins: [],
 };
