@@ -225,54 +225,13 @@ a:hover {
    5. HEADER / NAVBAR
    ============================================ */
 
-.header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 100;
-  padding: 2rem;
-}
-
-@media (min-width: 1024px) {
-  .header {
-    padding: 2rem 8rem;
-  }
-}
-
-.header__menu {
-  display: flex;
-  list-style: none;
-  gap: 2.5rem;
-  margin: 0;
-  padding: 0;
-}
-
-.header__menu a {
-  color: rgb(var(--color-on-surface));
-  font-weight: 600;
-  font-size: 1.4rem;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  transition: color 0.3s ease;
-}
-
-.header__menu a:hover {
-  color: rgb(var(--color-primary));
-}
+/* Header styles moved to Tailwind in Header.tsx */
 
 /* ============================================
    6. HERO SECTION
    ============================================ */
 
-#hero {
-  min-height: 100vh;
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  overflow-x: hidden;
-  background-color: rgb(var(--color-surface));
-}
+/* #hero shared layout moved to Tailwind in Hero.tsx */
 
 .hero-name {
   background-image: var(--gradient-name);
@@ -319,6 +278,8 @@ a:hover {
 /* -- Simplefolio-original theme hero -- */
 [data-theme="simplefolio-original"] #hero {
   padding: 0 5.6rem;
+  margin-left: 2rem;
+  margin-right: 2rem;
   color: rgb(var(--color-accent));
   font-weight: 400;
 }
@@ -328,6 +289,7 @@ a:hover {
   font-weight: 700;
   margin-bottom: 3.2rem;
   text-align: left;
+  line-height: 1.2;
 }
 
 [data-theme="simplefolio-original"] .hero-cta {
@@ -362,7 +324,6 @@ a:hover {
 
   [data-theme="simplefolio-original"] .hero-title {
     font-size: 3.5rem;
-    line-height: 1;
   }
 
   [data-theme="simplefolio-original"] .hero-cta a {
@@ -380,16 +341,7 @@ a:hover {
    7. ABOUT SECTION
    ============================================ */
 
-#about {
-  padding: 5rem 2rem 8rem;
-  color: #fff;
-}
-
-@media (min-width: 768px) {
-  #about {
-    padding: 5rem 8rem 8rem;
-  }
-}
+/* #about shared layout moved to Tailwind in About.tsx */
 
 /* -- Default theme about -- */
 [data-theme="default"] #about {
@@ -420,7 +372,7 @@ a:hover {
   position: relative;
 }
 
-[data-theme="simplefolio-original"] .section-title--about::after {
+/* [data-theme="simplefolio-original"] .section-title--about::after {
   content: "";
   display: block;
   position: absolute;
@@ -429,100 +381,15 @@ a:hover {
   width: 4rem;
   height: 4px;
   background: #fff;
-}
+} */
 
-/* About wrapper layout */
-.about-wrapper {
-  margin-top: 4rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-@media (min-width: 768px) {
-  .about-wrapper {
-    flex-direction: row;
-    align-items: center;
-  }
-}
-
-.about-wrapper__image {
-  display: flex;
-  height: 100%;
-  align-items: center;
-  justify-content: center;
-}
-
-@media (min-width: 768px) {
-  .about-wrapper__image {
-    width: 50%;
-  }
-}
-
-.about-wrapper__image img {
-  max-width: 350px;
-  width: 100%;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.about-wrapper__info {
-  display: flex;
-  height: 100%;
-  justify-content: center;
-  flex-direction: column;
-  padding-top: 2rem;
-  text-align: center;
-}
-
-@media (min-width: 768px) {
-  .about-wrapper__info {
-    width: 50%;
-    margin-left: 1rem;
-    padding-top: 0;
-    text-align: left;
-  }
-}
-
-@media (max-width: 56.25em) {
-  .about-wrapper__info {
-    align-items: center;
-    text-align: center;
-  }
-}
-
-.about-wrapper__info-text {
-  margin-top: 1.5rem;
-}
-
-.about-wrapper__info-text:first-child {
-  margin-top: 0;
-}
-
-.about-wrapper__resume {
-  margin-top: 2.4rem;
-}
-
-@media (min-width: 768px) {
-  .about-wrapper__resume {
-    text-align: left;
-  }
-}
+/* About wrapper layout moved to Tailwind in About.tsx */
 
 /* ============================================
    8. PROJECTS SECTION
    ============================================ */
 
-#projects {
-  background-color: rgb(var(--color-surface));
-  color: rgb(var(--color-accent));
-  padding: 5rem 2rem 4rem;
-}
-
-@media (min-width: 768px) {
-  #projects {
-    padding: 5rem 8rem 4rem;
-  }
-}
+/* #projects shared layout moved to Tailwind in Projects.tsx */
 
 /* -- Simplefolio-original theme projects -- */
 [data-theme="simplefolio-original"] #projects {
@@ -537,95 +404,10 @@ a:hover {
   }
 }
 
-/* Project wrapper */
-.project-wrapper {
-  margin-bottom: 15rem;
-}
-
-@media (max-width: 37.5em) {
-  .project-wrapper {
-    margin-bottom: 0;
-  }
-}
-
-.project-wrapper .row {
-  margin-bottom: 8rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-@media (min-width: 1024px) {
-  .project-wrapper .row {
-    flex-direction: row;
-  }
-}
-
-@media (max-width: 37.5em) {
-  .project-wrapper .row {
-    margin-bottom: 4rem;
-  }
-}
-
-/* Project text */
-.project-wrapper__text {
-  text-align: left;
-}
-
-@media (min-width: 1024px) {
-  .project-wrapper__text {
-    width: 33.333%;
-  }
-}
-
-@media (max-width: 56.25em) {
-  .project-wrapper__text {
-    text-align: center;
-  }
-}
-
-.project-wrapper__text-title {
-  font-weight: bold;
-  margin-bottom: 1.8rem;
-  font-size: 2.5rem;
-}
+/* Project wrapper layout moved to Tailwind in Projects.tsx */
 
 .project-wrapper__text p > a {
   color: rgb(var(--color-secondary));
-}
-
-.project-wrapper__buttons {
-  margin-top: 2.5rem;
-  display: flex;
-  gap: 1.2rem;
-}
-
-@media (max-width: 56.25em) {
-  .project-wrapper__buttons {
-    justify-content: center;
-  }
-}
-
-/* Project image */
-.project-wrapper__image {
-  width: 90%;
-  margin: 0 auto;
-  margin-top: 3rem;
-}
-
-@media (min-width: 1024px) {
-  .project-wrapper__image {
-    margin-left: 3rem;
-    margin-top: 0;
-    flex: 1;
-  }
-}
-
-@media (max-width: 56.25em) {
-  .project-wrapper__image {
-    width: 100%;
-    margin: 2rem 0 0;
-  }
 }
 
 /* Project thumbnail */
@@ -646,19 +428,7 @@ a:hover {
    9. CONTACT SECTION
    ============================================ */
 
-#contact {
-  color: #fff;
-  padding: 5rem 2rem 10rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-@media (min-width: 768px) {
-  #contact {
-    padding: 5rem 8rem 10rem;
-  }
-}
+/* #contact shared layout moved to Tailwind in Contact.tsx */
 
 /* -- Default theme contact -- */
 [data-theme="default"] #contact {
@@ -683,23 +453,7 @@ a:hover {
   }
 }
 
-/* Contact wrapper */
-.contact-wrapper {
-  margin-top: 3.2rem;
-  padding: 0 2rem;
-}
-
-.contact-wrapper__text {
-  margin-bottom: 2.5rem;
-}
-
-/* Contact Form */
-.contact-form {
-  width: 100%;
-  max-width: 60rem;
-  margin: 3.2rem auto 0;
-  padding: 0 2rem;
-}
+/* Contact wrapper & form container layout moved to Tailwind in Contact.tsx / ContactForm.tsx */
 
 [data-theme="default"] .contact-form {
   background: rgba(255, 255, 255, 0.1);
@@ -709,9 +463,7 @@ a:hover {
   border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-.contact-form__field {
-  margin-bottom: 2rem;
-}
+/* .contact-form__field margin moved to Tailwind in ContactForm.tsx */
 
 .contact-form__label {
   display: block;
@@ -744,29 +496,13 @@ a:hover {
   background: rgba(255, 255, 255, 0.15);
 }
 
-.contact-form__submit {
-  margin-top: 2rem;
-  text-align: center;
-}
-
-.contact-form__submit .cta-btn {
-  font-size: 1.8rem;
-}
+/* .contact-form__submit layout moved to Tailwind in ContactForm.tsx */
 
 /* ============================================
    10. FOOTER
    ============================================ */
 
-.footer {
-  background-color: rgb(var(--color-surface-dark));
-  padding: 4.8rem 0;
-}
-
-.social-links {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-}
+/* .footer and .social-links base layout moved to Tailwind in Footer.tsx */
 
 .social-links a {
   display: flex;
@@ -785,12 +521,7 @@ a:hover {
   transform: translateY(-2px);
 }
 
-.footer hr {
-  margin: 1rem auto;
-  border: 0;
-  width: 50%;
-  border-top: 2px solid grey;
-}
+/* .footer hr styling moved to Tailwind in Footer.tsx */
 
 .footer__text {
   color: rgb(var(--color-muted));

@@ -15,13 +15,13 @@ function ContactForm() {
   }
 
   return (
-    <div className="contact-form">
+    <div className="contact-form w-full max-w-[60rem] mx-auto mt-12 px-8">
       <form
         onSubmit={handleSubmit}
         action={`https://formspree.io/f/${contact.formId}`}
         method="post"
       >
-        <div className="contact-form__field">
+        <div className="mb-8">
           <label className="contact-form__label" htmlFor="name">
             Name
           </label>
@@ -35,7 +35,7 @@ function ContactForm() {
             onChange={(e) => setName(e.target.value)}
           />
         </div>
-        <div className="contact-form__field">
+        <div className="mb-8">
           <label className="contact-form__label" htmlFor="email">
             Email
           </label>
@@ -49,7 +49,7 @@ function ContactForm() {
             onChange={(e) => setEmail(e.target.value)}
           />
         </div>
-        <div className="contact-form__field">
+        <div className="mb-8">
           <label className="contact-form__label" htmlFor="message">
             Message
           </label>
@@ -68,7 +68,7 @@ function ContactForm() {
             errors={state.errors}
           />
         </div>
-        <div className="contact-form__submit">
+        <div className="mt-8 text-center">
           <button
             type="submit"
             disabled={state.submitting}
