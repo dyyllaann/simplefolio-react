@@ -85,11 +85,20 @@ To update the portfolio, all details are updated in the included index.json file
     "description": "This is where you can describe about your contact. The more you describe about your contact, the more chances you have!",
     "formId": "your-form-id"
   },
-  "footer": {
-		"linkedin": "",
-		"twitter": "",
-		"github": ""
-	}
+  "footer": [
+    {
+      "title": "LinkedIn",
+      "url": ""
+    },
+    {
+      "title": "Twitter",
+      "url": ""
+    },
+    {
+      "title": "GitHub",
+      "url": ""
+    }
+  ]
 }
 ```
 
@@ -108,6 +117,7 @@ Set up your contact account with Formspree.
 
 - [Tailwind](https://tailwindcss.com/) - Utility-First CSS framework
 - [Next.js](https://nextjs.org/) - Web development framework
+- [ScrollReveal.js](https://scrollrevealjs.org/) - JavaScript library
 - [Formspree](https://formspree.io/) - Form processing API
 
 ## Authors
