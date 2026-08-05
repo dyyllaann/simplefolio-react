@@ -14,7 +14,7 @@ const Hero = () => {
           {hero.subtitle}
         </h1>
         <div className="hero-cta load-hidden">
-          <a href="#about" className="cta-btn">
+          <a href="#about" className="cta-btn cta-btn--hero">
             <span>Know more</span>
           </a>
         </div>

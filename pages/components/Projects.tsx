@@ -21,7 +21,7 @@ const Projects = () => {
                       href={item.url}
                       target="_blank"
                       rel="noreferrer"
-                      className="cta-btn"
+                      className="cta-btn cta-btn--hero"
                     >
                       <span>See Live</span>
                     </a>

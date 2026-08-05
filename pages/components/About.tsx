@@ -26,7 +26,7 @@ const About = () => {
               <p className="about-wrapper__info-text">{about.primary}</p>
               <p className="about-wrapper__info-text mt-6">{about.secondary}</p>
               <span className="d-flex mt-6">
-                <a href="#" className="cta-btn">
+                <a href="#" className="cta-btn cta-btn--resume">
                   View Resume
                 </a>
               </span>
