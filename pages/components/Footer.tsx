@@ -24,7 +24,7 @@ const Footer = () => {
             </a>
           ))}
         </div>
-        <hr className="my-4 mx-auto w-1/2 border-0 border-t-2 border-gray-500" />
+        <hr className="my-4 mx-auto w-1/2 border-0 border-t-2 border-muted" />
         <p className="footer__text">
           © {year} - Template developed by{" "}
           <a href="https://www.dylanarveson.com">Dylan Arveson</a>
