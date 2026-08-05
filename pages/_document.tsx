@@ -3,8 +3,12 @@ import config from './index.json'
 
 export default function Document() {
   return (
-    <Html lang="en" className='scroll-smooth' data-theme={config.theme}>
+    <Html lang="en" className='scroll-smooth sr' data-theme={config.theme}>
       <Head>
+        <style>{`.sr .load-hidden { visibility: hidden; }`}</style>
+        <noscript>
+          <style>{`.load-hidden { visibility: visible !important; }`}</style>
+        </noscript>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />

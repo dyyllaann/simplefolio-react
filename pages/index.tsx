@@ -14,6 +14,7 @@ export default function Home() {
 
   return (
     <main>
+      <div id="top" />
       <Header />
       <Hero />
       <About />

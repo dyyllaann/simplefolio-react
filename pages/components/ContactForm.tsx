@@ -72,7 +72,7 @@ function ContactForm() {
           <button
             type="submit"
             disabled={state.submitting}
-            className="cta-btn cta-btn--hero"
+            className="cta-btn !px-10 !py-4 text-2xl"
           >
             <span>Send</span>
           </button>

@@ -137,6 +137,57 @@ a:hover {
   }
 }
 
+.container {
+  --bs-gutter-x: 1.5rem;
+  --bs-gutter-y: 0;
+  width: 100%;
+  padding-right: calc(var(--bs-gutter-x) * 0.5);
+  padding-left: calc(var(--bs-gutter-x) * 0.5);
+  margin-right: auto;
+  margin-left: auto;
+}
+
+@media (min-width: 576px) {
+  .container {
+    max-width: 540px;
+  }
+}
+
+.row {
+  display: flex;
+  flex-direction: column;
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 720px;
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    max-width: 960px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1140px;
+  }
+}
+
+@media (min-width: 1400px) {
+  .container {
+    max-width: 1320px;
+  }
+}
+
+/* Hide elements when the 'sr' class is present on html */
+html.sr .reveal-on-scroll {
+  visibility: hidden;
+}
+
+
 /* ============================================
    4. CTA BUTTONS
    ============================================ */
@@ -148,6 +199,8 @@ a:hover {
   font-weight: bold;
   line-height: 1;
   z-index: 1;
+  color: #fff;
+  border: 2px solid #fff;
   transition: all cubic-bezier(0.19, 1, 0.22, 1) 0.6s;
 }
 
@@ -160,64 +213,16 @@ a:hover {
   left: 0;
   bottom: 0;
   z-index: -1;
+  background: #fff;
   transition: all cubic-bezier(0.19, 1, 0.22, 1) 0.3s;
 }
 
-/* Hero CTA button — gradient border + gradient text, fills solid on hover */
-.cta-btn--hero {
-  background-image: var(--gradient-primary-135);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  border-width: 2px;
-  border-style: solid;
-  border-image: var(--gradient-primary-135);
-  border-image-slice: 1;
-  color: rgb(var(--color-primary)); /* fallback */
-}
-
-.cta-btn--hero::after {
-  background-image: var(--gradient-primary-135);
-}
-
-.cta-btn--hero:hover {
-  -webkit-text-fill-color: #fff;
-  text-decoration: none;
-}
-
-.cta-btn--hero:hover::after {
-  width: 100%;
-}
-
-/* Gradient text on nested span (React component DOM structure) */
-.cta-btn--hero span {
-  background-image: var(--gradient-primary-135);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-.cta-btn--hero:hover span {
-  -webkit-text-fill-color: #fff;
-  color: #fff;
-}
-
-/* Resume CTA button — white border, fills white on hover */
-.cta-btn--resume {
-  color: #fff;
-  border: 2px solid #fff;
-}
-
-.cta-btn--resume::after {
-  background: #fff;
-}
-
-.cta-btn--resume:hover {
+.cta-btn:hover {
   color: rgb(var(--color-secondary));
   text-decoration: none;
 }
 
-.cta-btn--resume:hover::after {
+.cta-btn:hover::after {
   width: 100%;
 }
 
@@ -343,6 +348,27 @@ a:hover {
 
 /* #about shared layout moved to Tailwind in About.tsx */
 
+.about-container {
+  padding: 5rem 2rem 8rem;
+}
+
+@media (min-width: 768px) {
+  .about-container {
+    padding-left: 8rem;
+    padding-right: 8rem;
+  }
+}
+
+.about-row {
+  align-items: center;
+}
+
+@media (min-width: 768px) {
+  .about-row {
+    flex-direction: row;
+  }
+}
+
 /* -- Default theme about -- */
 [data-theme="default"] #about {
   background-image: var(--gradient-primary);
@@ -383,13 +409,20 @@ a:hover {
   background: #fff;
 } */
 
-/* About wrapper layout moved to Tailwind in About.tsx */
-
 /* ============================================
    8. PROJECTS SECTION
    ============================================ */
 
-/* #projects shared layout moved to Tailwind in Projects.tsx */
+.project-row {
+  margin-bottom: 8rem;
+  align-items: flex-start;
+}
+
+@media (min-width: 1024px) {
+  .project-row {
+    flex-direction: row;
+  }
+}
 
 /* -- Simplefolio-original theme projects -- */
 [data-theme="simplefolio-original"] #projects {
@@ -429,6 +462,20 @@ a:hover {
    ============================================ */
 
 /* #contact shared layout moved to Tailwind in Contact.tsx */
+
+.contact-container {
+  padding: 5rem 2rem 10rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@media (min-width: 768px) {
+  .contact-container {
+    padding-left: 8rem;
+    padding-right: 8rem;
+  }
+}
 
 /* -- Default theme contact -- */
 [data-theme="default"] #contact {
