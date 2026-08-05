@@ -5,11 +5,11 @@ const Hero = () => {
   const hero = config.hero;
 
   return (
-    <section id="hero" className="jumbotron min-h-screen h-screen flex items-center overflow-x-hidden bg-surface">
-      <div className="container hero-container">
+    <section id="hero" className="flex min-h-screen items-center overflow-x-hidden bg-surface">
+      <div className="site-container">
         <h1 className="hero-title font-bold load-hidden">
           Hi, my name is{" "}
-          <span className="hero-name text-color-main">{hero.name}</span>
+          <span className="hero-name">{hero.name}</span>
           <br />
           {hero.subtitle}
         </h1>

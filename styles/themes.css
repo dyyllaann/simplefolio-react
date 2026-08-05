@@ -11,26 +11,29 @@
   --color-surface-dark: 38 38 38;        /* neutral-800 */
   --color-on-surface-dark: 163 163 163;  /* neutral-400 */
   --color-muted: 82 82 82;               /* neutral-600 */
+  --color-on-primary: 255 255 255;
 
   --gradient-primary: linear-gradient(to right, #fb7185, #d946ef, #6366f1);
   --gradient-primary-135: linear-gradient(135deg, #fb7185, #d946ef, #6366f1);
   --gradient-name: linear-gradient(to right, #9333ea, #db2777, #2563eb);
 }
 
-[data-theme="swiss-foundry"] {
-  --color-primary: 0 0 0;               /* Pure Black */
-  --color-secondary: 64 64 64;          /* neutral-700 */
-  --color-accent: 115 115 115;          /* neutral-500 */
-  --color-surface: 255 255 255;         /* White */
-  --color-on-surface: 0 0 0;            /* Black */
-  --color-surface-dark: 245 245 245;    /* neutral-100 (Subtle Cards) */
-  --color-on-surface-dark: 23 23 23;    /* neutral-900 */
-  --color-muted: 163 163 163;           /* neutral-400 */
+[data-theme="snow"] {
+  --color-primary: 14 165 233;          /* sky-500 */
+  --color-secondary: 56 189 248;        /* sky-400 */
+  --color-accent: 186 230 253;          /* sky-200 */
+  --color-surface: 255 255 255;         /* white */
+  --color-on-surface: 15 23 42;         /* slate-900 (Deepest Blue-Black) */
+  --color-surface-dark: 240 249 255;    /* sky-50 */
+  --color-on-surface-dark: 51 65 85;    /* slate-700 */
+  --color-muted: 148 163 184;           /* slate-400 */
+  --color-on-primary: 255 255 255;      /* white */
 
-  --gradient-primary: linear-gradient(to right, #000000, #404040);
-  --gradient-primary-135: linear-gradient(135deg, #000000, #525252);
-  --gradient-name: linear-gradient(to right, #000000, #737373);
+  --gradient-primary: linear-gradient(to right, #38bdf8, #e0f2fe);
+  --gradient-primary-135: linear-gradient(135deg, #0ea5e9, #bae6fd);
+  --gradient-name: linear-gradient(to right, #0284c7, #7dd3fc);
 }
+
 
 [data-theme="sage"] {
   --color-primary: 87 107 92;           /* Olive/Sage */
@@ -41,10 +44,11 @@
   --color-surface-dark: 231 229 228;    /* stone-200 */
   --color-on-surface-dark: 68 64 60;    /* stone-700 */
   --color-muted: 120 113 108;           /* stone-500 */
+  --color-on-primary: 255 255 255;
 
-  --gradient-primary: linear-gradient(to right, #576b5c, #a8a29e);
-  --gradient-primary-135: linear-gradient(135deg, #576b5c, #a8a29e);
-  --gradient-name: linear-gradient(to right, #445c4a, #d6d3d1);
+  --gradient-primary: linear-gradient(to right, #576b5c, #576b5c);
+  --gradient-primary-135: linear-gradient(135deg, #576b5c, #576b5c);
+  --gradient-name: linear-gradient(to right, #445c4a, #576b5c);
 }
 
 [data-theme="sunset"] {
@@ -56,6 +60,7 @@
   --color-surface-dark: 254 243 199;    /* amber-50 */
   --color-on-surface-dark: 120 53 15;   /* amber-900 */
   --color-muted: 253 186 116;           /* orange-300 */
+  --color-on-primary: 255 255 255;
 
   --gradient-primary: linear-gradient(to right, #f97316, #dc2626);
   --gradient-primary-135: linear-gradient(135deg, #fbbf24, #f97316, #dc2626);
@@ -71,6 +76,7 @@
   --color-surface-dark: 24 24 27;       /* zinc-900 */
   --color-on-surface-dark: 161 161 170; /* zinc-400 */
   --color-muted: 63 63 70;              /* zinc-700 */
+  --color-on-primary: 9 9 11;
 
   --gradient-primary: linear-gradient(to right, #f4f4f5, #a1a1aa);
   --gradient-primary-135: linear-gradient(135deg, #ffffff, #a1a1aa);
@@ -86,6 +92,7 @@
   --color-surface-dark: 51 51 51;       /* #333 dark grey */
   --color-on-surface-dark: 255 255 255; /* white */
   --color-muted: 80 80 80;              /* light grey */
+  --color-on-primary: 255 255 255;
 
   --gradient-primary: linear-gradient(135deg, #02aab0, #00cdac);
   --gradient-primary-135: linear-gradient(135deg, #02aab0, #00cdac);

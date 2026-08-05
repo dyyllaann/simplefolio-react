@@ -17,6 +17,7 @@ module.exports = {
 				"on-surface": "rgb(var(--color-on-surface) / <alpha-value>)",
 				"surface-dark": "rgb(var(--color-surface-dark) / <alpha-value>)",
 				"on-surface-dark": "rgb(var(--color-on-surface-dark) / <alpha-value>)",
+				"on-primary": "rgb(var(--color-on-primary) / <alpha-value>)",
 				muted: "rgb(var(--color-muted) / <alpha-value>)",
 			},
 			keyframes: {

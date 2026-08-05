@@ -1,15 +1,3 @@
-/* ============================================
-   1. HEADER / NAVBAR
-   ============================================ */
-
-/* Header styles moved to Tailwind in Header.tsx */
-
-/* ============================================
-   2. HERO SECTION
-   ============================================ */
-
-/* #hero shared layout moved to Tailwind in Hero.tsx */
-
 .hero-name {
   background-image: var(--gradient-name);
   -webkit-background-clip: text;
@@ -18,21 +6,17 @@
   white-space: nowrap;
 }
 
-/* -- Hero -- */
 #hero {
-  padding: 0 5.6rem;
-  margin-left: 2rem;
-  margin-right: 2rem;
   color: rgb(var(--color-accent));
   font-weight: 400;
 }
 
 .hero-title {
+  margin-bottom: 3.2rem;
   font-size: 5.6rem;
   font-weight: 700;
-  margin-bottom: 3.2rem;
-  text-align: left;
   line-height: 1.2;
+  text-align: left;
 }
 
 .hero-cta {
@@ -43,13 +27,13 @@
   font-size: 2.4rem;
 }
 
-@media (max-width: 75em) {
+@media (max-width: 1279px) {
   .hero-title {
     font-size: 4rem;
   }
 }
 
-@media (max-width: 56.25em) {
+@media (max-width: 767px) {
   .hero-title {
     font-size: 3.6rem;
     text-align: center;
@@ -60,11 +44,7 @@
   }
 }
 
-@media (max-width: 37.5em) {
-  #hero {
-    padding: 0 1rem;
-  }
-
+@media (max-width: 639px) {
   .hero-title {
     font-size: 3.5rem;
   }
@@ -80,229 +60,105 @@
   }
 }
 
-/* ============================================
-   3. ABOUT SECTION
-   ============================================ */
-
-/* #about shared layout moved to Tailwind in About.tsx */
-
-/* .about-container {
-  padding: 5rem 2rem 8rem;
-}
-
-@media (min-width: 768px) {
-  .about-container {
-    padding-left: 8rem;
-    padding-right: 8rem;
-  }
-} */
-
-.about-row {
-  align-items: center;
-}
-
-@media (min-width: 768px) {
-  .about-row {
-    flex-direction: row;
-  }
-}
-
-/* -- About -- */
 #about {
+  padding-bottom: 10%;
   background-color: rgb(var(--color-primary));
   background-image: var(--gradient-primary-135);
-  height: 100%;
-  border-bottom: 0;
-  -webkit-clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
   clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
-  padding-bottom: 10%;
 }
 
-@media (max-width: 75em) {
-  #about {
-    height: 100%;
-    -webkit-clip-path: none;
-    clip-path: none;
-  }
-}
-
-/* About section title with underline */
-.section-title--about {
-  position: relative;
-}
-
-/* .section-title--about::after {
-  content: "";
-  display: block;
-  position: absolute;
-  top: 95%;
-  left: calc(50% - 2rem);
-  width: 4rem;
-  height: 4px;
-  background: #fff;
-} */
-
-/* ============================================
-   4. PROJECTS SECTION
-   ============================================ */
-
-.project-row {
-  margin-bottom: 8rem;
-  align-items: flex-start;
-}
-
-@media (min-width: 1024px) {
-  .project-row {
-    flex-direction: row;
-  }
-}
-
-/* -- Projects -- */
 #projects {
   margin-top: -10rem;
   padding-top: 15rem;
 }
 
-@media (max-width: 75em) {
-  #projects {
-    margin-top: 0;
-    padding-top: 5rem;
-  }
-}
-
-/* Project wrapper layout moved to Tailwind in Projects.tsx */
-
-.project-wrapper__text p > a {
+.project-description a {
   color: rgb(var(--color-secondary));
 }
 
-/* Project thumbnail */
 .thumbnail {
-  border: none;
-  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.08), 0 0 6px rgba(0, 0, 0, 0.05);
-  transition: all 0.2s ease-out;
   width: 100%;
+  border: 0;
+  box-shadow: 0 6px 10px rgb(0 0 0 / 0.08), 0 0 6px rgb(0 0 0 / 0.05);
+  transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
 }
 
 .thumbnail:hover {
-  box-shadow: 0px 4px 8px rgba(38, 38, 38, 0.2);
+  box-shadow: 0 4px 8px rgb(38 38 38 / 0.2);
   transform: translateY(-4px);
-  transition: all 0.2s ease-out;
 }
 
-/* ============================================
-   5. CONTACT SECTION
-   ============================================ */
-
-/* #contact shared layout moved to Tailwind in Contact.tsx */
-
-.contact-container {
-  padding: 5rem 2rem 10rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-@media (min-width: 768px) {
-  .contact-container {
-    padding-left: 8rem;
-    padding-right: 8rem;
+@media (min-width: 1400px) {
+  .project-wrapper__image {
+    max-width: 77.5rem;
   }
 }
 
-/* -- Contact -- */
 #contact {
-  background-image: var(--gradient-primary-135);
-  -webkit-clip-path: polygon(0 15vh, 100% 0, 100% 100%, 0 100%);
-  clip-path: polygon(0 15vh, 100% 0, 100% 100%, 0 100%);
-  padding: 15rem 0 10rem;
   margin-top: -10rem;
+  padding: 15rem 0 10rem;
+  background-image: var(--gradient-primary-135);
+  clip-path: polygon(0 15vh, 100% 0, 100% 100%, 0 100%);
 }
-
-@media (max-width: 75em) {
-  #contact {
-    -webkit-clip-path: none;
-    clip-path: none;
-    margin-top: 0;
-    padding: 5rem 0;
-  }
-}
-
-/* Contact wrapper & form container layout moved to Tailwind in Contact.tsx / ContactForm.tsx */
 
 .contact-form {
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 1.2rem;
   padding: 3rem 2.5rem;
+  border: 1px solid rgb(255 255 255 / 0.2);
+  border-radius: 1.2rem;
+  background: rgb(255 255 255 / 0.1);
   backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
 }
-
-/* .contact-form__field margin moved to Tailwind in ContactForm.tsx */
 
 .contact-form__label {
   display: block;
-  font-weight: bold;
   margin-bottom: 0.8rem;
+  color: rgb(var(--color-on-primary));
+  font-weight: 700;
   text-align: left;
-  color: #fff;
 }
 
 .contact-form__input {
   width: 100%;
   padding: 1rem 1.2rem;
-  border: 2px solid rgba(255, 255, 255, 0.3);
-  background: rgba(255, 255, 255, 0.1);
-  color: #fff;
-  font-family: "Montserrat", sans-serif;
-  font-size: 1.6rem;
+  border: 2px solid rgb(255 255 255 / 0.3);
   border-radius: 4px;
-  transition: border-color 0.3s ease;
-  box-sizing: border-box;
+  background: rgb(255 255 255 / 0.1);
+  color: rgb(var(--color-on-primary));
+  font: inherit;
+  font-size: 1.6rem;
+  transition: border-color 0.3s ease, background-color 0.3s ease;
 }
 
 .contact-form__input::placeholder {
-  color: rgba(255, 255, 255, 0.5);
+  color: rgb(var(--color-on-primary) / 0.65);
 }
 
 .contact-form__input:focus {
-  outline: none;
-  border-color: #fff;
-  background: rgba(255, 255, 255, 0.15);
+  border-color: rgb(var(--color-on-primary));
+  background: rgb(255 255 255 / 0.15);
 }
 
-/* .contact-form__submit layout moved to Tailwind in ContactForm.tsx */
-
-/* ============================================
-   6. FOOTER
-   ============================================ */
-
-/* .footer and .social-links base layout moved to Tailwind in Footer.tsx */
+.contact-form__input:disabled {
+  cursor: not-allowed;
+  opacity: 0.7;
+}
 
 .social-links a {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  color: rgb(var(--color-on-surface-dark));
-  font-size: 3rem;
+  display: grid;
   width: 5rem;
   height: 5rem;
   margin: 1.6rem;
-  transition: all 0.2s ease-in;
+  color: rgb(var(--color-on-surface-dark));
+  font-size: 3rem;
+  place-items: center;
+  transition: transform 0.2s ease-in, color 0.2s ease-in;
 }
 
 .social-links a:hover {
   transform: translateY(-2px);
 }
 
-/* .footer hr styling moved to Tailwind in Footer.tsx */
-
-.footer__text {
-  color: rgb(var(--color-muted));
-  font-size: 1.3rem;
-}
-
+.footer__text,
 .footer__text a {
   color: rgb(var(--color-muted));
   font-size: 1.3rem;
@@ -310,17 +166,33 @@
 
 .footer__text a:hover {
   color: rgb(var(--color-on-surface-dark));
-  transition: all 0.2s ease-in;
 }
 
 .back-to-top {
   display: inline-block;
-  margin: 2rem 0 0;
+  margin-top: 2rem;
   color: rgb(var(--color-on-surface-dark));
   font-size: 2.4rem;
-  transition: all 0.2s ease-in;
+  transition: transform 0.2s ease-in;
 }
 
 .back-to-top:hover {
   transform: translateY(-2px);
+}
+
+@media (max-width: 1279px) {
+  #about,
+  #contact {
+    clip-path: none;
+  }
+
+  #projects {
+    margin-top: 0;
+    padding-top: 5rem;
+  }
+
+  #contact {
+    margin-top: 0;
+    padding: 5rem 0;
+  }
 }

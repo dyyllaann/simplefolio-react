@@ -6,8 +6,8 @@ const Footer = () => {
   const [year] = useState(() => new Date().getFullYear());
 
   return (
-    <footer className="footer navbar-static-bottom bg-surface-dark py-20">
-      <div className="container">
+    <footer className="bg-surface-dark py-20">
+      <div className="site-container">
         <a href="#top" className="back-to-top" aria-label="Back to top">
           ↑
         </a>
