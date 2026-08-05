@@ -99,6 +99,10 @@ a:hover {
    3. SHARED UTILITY CLASSES
    ============================================ */
 
+section {
+  padding: 5rem 0;
+}
+
 .section-title {
   margin: 0;
   margin-bottom: 4.5rem;
