@@ -394,7 +394,7 @@ html.sr .reveal-on-scroll {
 
 /* #about shared layout moved to Tailwind in About.tsx */
 
-.about-container {
+/* .about-container {
   padding: 5rem 2rem 8rem;
 }
 
@@ -403,7 +403,7 @@ html.sr .reveal-on-scroll {
     padding-left: 8rem;
     padding-right: 8rem;
   }
-}
+} */
 
 .about-row {
   align-items: center;
