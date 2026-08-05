@@ -1,0 +1,93 @@
+/* ============================================
+   Theme Tokens
+   ============================================ */
+
+[data-theme="dylan"] {
+  --color-primary: 251 113 133;          /* rose-400 */
+  --color-secondary: 217 70 239;         /* fuchsia-500 */
+  --color-accent: 99 102 241;            /* indigo-500 */
+  --color-surface: 255 255 255;          /* white */
+  --color-on-surface: 0 0 0;             /* black */
+  --color-surface-dark: 38 38 38;        /* neutral-800 */
+  --color-on-surface-dark: 163 163 163;  /* neutral-400 */
+  --color-muted: 82 82 82;               /* neutral-600 */
+
+  --gradient-primary: linear-gradient(to right, #fb7185, #d946ef, #6366f1);
+  --gradient-primary-135: linear-gradient(135deg, #fb7185, #d946ef, #6366f1);
+  --gradient-name: linear-gradient(to right, #9333ea, #db2777, #2563eb);
+}
+
+[data-theme="swiss-foundry"] {
+  --color-primary: 0 0 0;               /* Pure Black */
+  --color-secondary: 64 64 64;          /* neutral-700 */
+  --color-accent: 115 115 115;          /* neutral-500 */
+  --color-surface: 255 255 255;         /* White */
+  --color-on-surface: 0 0 0;            /* Black */
+  --color-surface-dark: 245 245 245;    /* neutral-100 (Subtle Cards) */
+  --color-on-surface-dark: 23 23 23;    /* neutral-900 */
+  --color-muted: 163 163 163;           /* neutral-400 */
+
+  --gradient-primary: linear-gradient(to right, #000000, #404040);
+  --gradient-primary-135: linear-gradient(135deg, #000000, #525252);
+  --gradient-name: linear-gradient(to right, #000000, #737373);
+}
+
+[data-theme="sage"] {
+  --color-primary: 87 107 92;           /* Olive/Sage */
+  --color-secondary: 168 162 158;       /* Warm Stone */
+  --color-accent: 234 88 12;            /* Burnt Orange (pop) */
+  --color-surface: 216 217 208;         /* olive-300 */
+  --color-on-surface: 41 37 36;         /* stone-800 */
+  --color-surface-dark: 231 229 228;    /* stone-200 */
+  --color-on-surface-dark: 68 64 60;    /* stone-700 */
+  --color-muted: 120 113 108;           /* stone-500 */
+
+  --gradient-primary: linear-gradient(to right, #576b5c, #a8a29e);
+  --gradient-primary-135: linear-gradient(135deg, #576b5c, #a8a29e);
+  --gradient-name: linear-gradient(to right, #445c4a, #d6d3d1);
+}
+
+[data-theme="sunset"] {
+  --color-primary: 249 115 22;          /* orange-500 */
+  --color-secondary: 220 38 38;         /* red-600 */
+  --color-accent: 251 191 36;           /* amber-400 */
+  --color-surface: 255 255 255;         /* white */
+  --color-on-surface: 67 20 7;          /* warm-black */
+  --color-surface-dark: 254 243 199;    /* amber-50 */
+  --color-on-surface-dark: 120 53 15;   /* amber-900 */
+  --color-muted: 253 186 116;           /* orange-300 */
+
+  --gradient-primary: linear-gradient(to right, #f97316, #dc2626);
+  --gradient-primary-135: linear-gradient(135deg, #fbbf24, #f97316, #dc2626);
+  --gradient-name: linear-gradient(to right, #f59e0b, #ef4444);
+}
+
+[data-theme="onyx"] {
+  --color-primary: 250 250 250;         /* zinc-50 (White) */
+  --color-secondary: 161 161 170;       /* zinc-400 (Silver) */
+  --color-accent: 255 255 255;          /* Pure White */
+  --color-surface: 9 9 11;              /* zinc-950 (Deep Black) */
+  --color-on-surface: 244 244 245;      /* zinc-100 */
+  --color-surface-dark: 24 24 27;       /* zinc-900 */
+  --color-on-surface-dark: 161 161 170; /* zinc-400 */
+  --color-muted: 63 63 70;              /* zinc-700 */
+
+  --gradient-primary: linear-gradient(to right, #f4f4f5, #a1a1aa);
+  --gradient-primary-135: linear-gradient(135deg, #ffffff, #a1a1aa);
+  --gradient-name: linear-gradient(to right, #ffffff, #71717a);
+}
+
+[data-theme="simplefolio-original"] {
+  --color-primary: 2 170 176;           /* #02aab0 */
+  --color-secondary: 0 205 172;         /* #00cdac */
+  --color-accent: 39 35 65;             /* #272341 */
+  --color-surface: 255 255 255;         /* white */
+  --color-on-surface: 39 35 65;         /* #272341 dark blue */
+  --color-surface-dark: 51 51 51;       /* #333 dark grey */
+  --color-on-surface-dark: 255 255 255; /* white */
+  --color-muted: 80 80 80;              /* light grey */
+
+  --gradient-primary: linear-gradient(135deg, #02aab0, #00cdac);
+  --gradient-primary-135: linear-gradient(135deg, #02aab0, #00cdac);
+  --gradient-name: linear-gradient(135deg, #02aab0, #00cdac);
+}
