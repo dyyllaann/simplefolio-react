@@ -15,6 +15,12 @@
     "@formspree/react": "^2.4.1",
     "scrollreveal": "^4.0.9"
   },
+  "overrides": {
+    "@formspree/react": {
+      "react": "$react",
+      "react-dom": "$react-dom"
+    }
+  },
   "devDependencies": {
     "@types/node": "^24.0.0",
     "@types/react": "18.0.35",
