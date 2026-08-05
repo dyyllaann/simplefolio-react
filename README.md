@@ -6,9 +6,7 @@
   A clean, beautiful, themeable, responsive portfolio template for developers!
 </h2>
 
-<p align="center">
-  <video src="./public/preview.webm" controls muted loop playsinline aria-label="Simplefolio React portfolio preview"></video>
-</p>
+<img src="./public/preview.gif" alt="Simplefolio React portfolio preview" />
 
 Feel free to use it as-is or customize it as much as you want. This template was created from scratch and inspired by [Simplefolio](https://github.com/cobidev/simplefolio) by [Jacobo Martinez](https://github.com/cobidev). 
 Simplefolio React uses Jacobo Martinez's portfolio template and updates it for modern breakpoints and theming.
@@ -108,10 +106,6 @@ Update the portfolio content in [pages/index.json](./pages/index.json):
 Available themes are `dylan`, `snow`, `sage`, `sunset`, `onyx`, and
 `simplefolio-original`. Their color tokens are defined in
 [styles/themes.css](./styles/themes.css).
-
-Navigation links are generated from each navigation item's `title`; the title
-must match the target section ID (for example, `Projects` links to
-`#projects`). The `url` values are currently not used by the header.
 
 ### Step 2
 
