@@ -3,7 +3,7 @@
 </h1>
 
 <h2 align="center">
-  A clean, beautiful, themeable, responsive portfolio template for developers!
+  A clean, beautiful, <i>themeable</i>, responsive portfolio template for developers!
 </h2>
 
 <img src="./public/preview.gif" alt="Simplefolio React portfolio preview" />
