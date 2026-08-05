@@ -9,10 +9,10 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@formspree/react": "^2.4.1",
     "next": "^16.3.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "@formspree/react": "^2.4.1",
     "scrollreveal": "^4.0.9"
   },
   "overrides": {
@@ -23,13 +23,13 @@
   },
   "devDependencies": {
     "@types/node": "^24.0.0",
-    "@types/react": "18.0.35",
-    "@types/react-dom": "18.0.11",
+    "@types/react": "^19.2.18",
+    "@types/react-dom": "^19.2.4",
     "autoprefixer": "10.4.14",
     "eslint": "8.38.0",
     "eslint-config-next": "13.3.0",
     "postcss": "8.4.22",
     "tailwindcss": "3.3.1",
-    "typescript": "5.0.4"
+    "typescript": "^7.0.2"
   }
 }
