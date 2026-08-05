@@ -3,15 +3,15 @@
   "navigation": [
 		{
 			"title": "About",
-			"url": "http://www.example.com/about"
+			"url": "#about"
 		},
 		{
 			"title": "Projects",
-			"url": "http://www.example.com/portfolio"
+			"url": "#projects"
 		},
 		{
 			"title": "Contact",
-			"url": "http://www.example.com/contact"
+			"url": "#contact"
 		}
 	],
   "hero": {

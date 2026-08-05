@@ -3,13 +3,15 @@
 </h1>
 
 <h2 align="center">
-  A clean, beautiful and responsive portfolio template for developers!
+  A clean, beautiful, themeable, responsive portfolio template for developers!
 </h2>
 
-<img src="/public/simplefolio-react-preview.gif">
+<p align="center">
+  <video src="./public/preview.webm" controls muted loop playsinline aria-label="Simplefolio React portfolio preview"></video>
+</p>
 
 Feel free to use it as-is or customize it as much as you want. This template was created from scratch and inspired by [Simplefolio](https://github.com/cobidev/simplefolio) by [Jacobo Martinez](https://github.com/cobidev). 
-Simplefolio React uses (roughly) the same portofolio template in React.js.
+Simplefolio React uses Jacobo Martinez's portfolio template and updates it for modern breakpoints and theming.
 
 ---
 
@@ -26,22 +28,23 @@ testing purposes.
 
 ### Step 1
 
-To update the portfolio, all details are updated in the included index.json file:  
+Update the portfolio content in [pages/index.json](./pages/index.json):
 
 ```json
 {
+  "theme": "snow",
   "navigation": [
 		{
 			"title": "About",
-			"url": "http://www.example.com/about"
+			"url": "#about"
 		},
 		{
 			"title": "Projects",
-			"url": "http://www.example.com/portfolio"
+			"url": "#portfolio"
 		},
 		{
 			"title": "Contact",
-			"url": "http://www.example.com/contact"
+			"url": "#contact"
 		}
 	],
   "hero": {
@@ -83,7 +86,7 @@ To update the portfolio, all details are updated in the included index.json file
   "contact": {
     "title": "Contact",
     "description": "This is where you can describe about your contact. The more you describe about your contact, the more chances you have!",
-    "formId": "your-form-id"
+    "formId": "[INSERT YOUR FORMSPREE FORM ID HERE]"
   },
   "footer": [
     {
@@ -102,14 +105,22 @@ To update the portfolio, all details are updated in the included index.json file
 }
 ```
 
+Available themes are `dylan`, `snow`, `sage`, `sunset`, `onyx`, and
+`simplefolio-original`. Their color tokens are defined in
+[styles/themes.css](./styles/themes.css).
+
+Navigation links are generated from each navigation item's `title`; the title
+must match the target section ID (for example, `Projects` links to
+`#projects`). The `url` values are currently not used by the header.
+
 ### Step 2
 
-Set up your contact account with Formspree. 
+Set up a contact form with Formspree.
 
 1. Go to [https://formspree.io/](https://formspree.io/).
-2. Create account.
-3. Get your form id. 
-4. Copy/paste your form id into the formId section of the index.json file.
+2. Create an account.
+3. Get your form ID.
+4. Paste the form ID into the `formId` field in [pages/index.json](./pages/index.json).
 
 ---
 
@@ -130,30 +141,46 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 
 ## Acknowledgments
 
-I was motivated to create this project after seeing the Simplefolio that [Jacobo Martinez](https://github.com/cobimr) created and shared with the [ZTM Community](https://github.com/zero-to-mastery) and [Andrei](https://github.com/aneagoie)
+I was motivated to create this project after seeing the Simplefolio that [Jacobo Martinez](https://github.com/cobimr) created and shared with the [ZTM Community](https://github.com/zero-to-mastery).
 
 ## Prerequisites
 
 You will need the following things properly installed on your computer.
 
 * [Git](https://git-scm.com/)
-* [Node.js](https://nodejs.org/) 18 or higher (with npm)
+* [Node.js](https://nodejs.org/) 24 or later (with npm)
 
 ## Installation
 
-* `git clone https://github.com/dyyllaann/simplefolio-react.git` this repository
-* `cd simplefolio-react`
-* `npm install`
+```bash
+git clone https://github.com/dyyllaann/simplefolio-react.git
+cd simplefolio-react
+npm install
+```
 
 ## Running / Development
 
-* `npm run dev`
-* Visit your app at [http://localhost:3000](http://localhost:3000).
+```bash
+npm run dev
+```
+
+Open [http://localhost:3000](http://localhost:3000).
 
 ### Linting
 
-* `npm run lint`
+```bash
+npm run lint
+```
 
 ### Building
 
-*  `npm run build`
+```bash
+npm run build
+npm start
+```
+
+### Hosting
+
+This project is hosted with Vercel, although my personal portfolio uses the same template and is hosted on AWS. I strongly recommend Vercel for ease of use.
+
+To deploy with Vercel, create a new project and import the Git repository.
