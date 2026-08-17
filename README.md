@@ -135,7 +135,7 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 
 ## Acknowledgments
 
-I was motivated to create this project after seeing the Simplefolio that [Jacobo Martinez](https://github.com/cobimr) created and shared with the [ZTM Community](https://github.com/zero-to-mastery).
+I was motivated to create this project after seeing the Simplefolio that [Jacobo Martinez](https://github.com/cobiwave) created and shared with the [ZTM Community](https://github.com/zero-to-mastery).
 
 ## Prerequisites
 
